@@ -43,12 +43,14 @@ namespace ServisPeter.Models
         [Required(ErrorMessage = "ŠPZ musí byť zadaná!")]
         [RegularExpression(@"^[a-zA-Z0-9]*$", ErrorMessage = "Prosím zadajte ŠPZ bez medzier!")]
         [Display(Name = "ŠPZ")]
+
         public string SPZ { get; set; }
 
 
-        [Required(ErrorMessage = "WIN musí byť zadané!")]
-        [RegularExpression(@"^[a-zA-Z0-9]*$", ErrorMessage = "Prosím zadajte WIN číslo bez medzier.")]
-        [StringLength(17, MinimumLength = 17, ErrorMessage = "Dĺžka WIN je sedemnásť znakov!")]
+        [Required(ErrorMessage = "VIN musí byť zadané!")]
+        [RegularExpression(@"^[a-zA-Z0-9]*$", ErrorMessage = "Prosím zadajte VIN číslo bez medzier.")]
+        [StringLength(17, MinimumLength = 17, ErrorMessage = "Dĺžka VIN je sedemnásť znakov!")]
+        [Display(Name = "VIN")]
         public string WIN { get; set; }
 
         [Required(ErrorMessage = "Oprava musí byť zadaná!")]

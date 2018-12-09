@@ -13,8 +13,8 @@
     <h1 style="color:darkslategray;font-size:30px; font-weight:bold;">Filtrovanie:</h1>
     <form class="form-inline" asp-controller="Databazas" asp-action="Index">
         <div class="form-group">
-            <label for="WIN"> WIN: </label>
-            <input type="text" name="SearchString" class="form-control" id="WIN" placeholder="Zadaj Win">
+            <label for="WIN"> VIN: </label>
+            <input type="text" name="SearchString" class="form-control" id="WIN" placeholder="Zadaj Vin">
             <input type="submit" value="Potvrdiť" class="btn btn-primary" />
             <input type="submit" value="Vrátiť sa späť" class="btn btn-default" />
 
@@ -47,7 +47,7 @@
         <thead style="background-color:#404040; color:white;">
             <tr>
                 <th>
-                    <p class="text-justify">Poradové číslo:</p>
+                    <p class="text-justify">P.č.</p>
                 </th>
                 <th>
                     <p class="text-justify">Dátum prijatia </p>
@@ -56,10 +56,10 @@
                     <p class="text-justify">Dátum odovzdania </p>
                 </th>
                 <th>
-                    <p class="text-justify" @Html.DisplayNameFor(model => model.Auto) </p>
-<th>
-    <p class="text-justify">  @Html.DisplayNameFor(model => model.Typ)</p>
-</th>
+                    <p class="text-justify"> @Html.DisplayNameFor(model => model.Auto) </p>
+                <th>
+                  <p class="text-justify">  @Html.DisplayNameFor(model => model.Typ)</p>
+                </th>
                 <th>
                     <p class="text-justify">@Html.DisplayNameFor(model => model.Kod)</p>
 </th>
@@ -70,7 +70,7 @@
                     <p class="text-justify"> @Html.DisplayNameFor(model => model.SPZ)</p>
 </th>
                 <th>
-                    <p class="text-justify">@Html.DisplayNameFor(model => model.WIN)</p>
+                    <p class="text-center">@Html.DisplayNameFor(model => model.WIN)</p>
 </th>
                 <th>
                     <p class="text-justify">@Html.DisplayNameFor(model => model.Oprava)</p>
@@ -81,7 +81,7 @@
                 <th>
                     <p class="text-justify">@Html.DisplayNameFor(model => model.Poznamky)</p>
 </th>
-                <th> <p class="text-justify"> Operácie: </p>  </th>
+                <th> <p class="text-justify"> Operácie</p>  </th>
             </tr>
         </thead>
         <tbody>
