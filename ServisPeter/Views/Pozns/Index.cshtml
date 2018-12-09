@@ -21,7 +21,7 @@
 
 <table class="table table-hover table-striped table-sm table-bordedless table-responsive table-bordered ">
 
-    <thead style="background-color:#E0E0E0; color:black;">
+    <thead style="background-color:#E0E0E0; color:black; text-align:center;">
         <tr>
             <th>
                 <p class="text-center">   @Html.DisplayNameFor(model => model.Datum)</p>
@@ -43,13 +43,13 @@
         {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Datum)
+                <p class="text-center">      @Html.DisplayFor(modelItem => item.Datum)</p>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Nazov)
+                <p class="text-center">     @Html.DisplayFor(modelItem => item.Nazov)</p>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Predmet)
+                <p class="text-center">    @Html.DisplayFor(modelItem => item.Predmet)</p>
             </td>
             <td>
                 <p class="text-justify">     @Html.DisplayFor(modelItem => item.Text)</p>

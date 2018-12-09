@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Index";
 }
-
+ </br>
 <h1 style="color:darkslategrey;font-size:40px; font-weight:bold;">Náradie </h1>
 <p style="text-align: justify; font-family:Times New Roman; font-size:25px;">Sem môžeš, zadať náradie, ktorú si si práve zakúpil. </p>
 
@@ -20,7 +20,7 @@
     <br />
 
     <table class="table table-hover table-striped table-sm table-bordedless table-dark table-responsive  table-bordered ">
-        <thead style="background-color:#E0E0E0; color:black;">
+        <thead style="background-color:#E0E0E0; color:black;text-align:center;">
             <tr>
                 <th>
                     <p class="text-center">   @Html.DisplayNameFor(model => model.Nazov) </p>
@@ -39,14 +39,14 @@
             {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Nazov)
-                </td>
+                    <p class="text-center">   @Html.DisplayFor(modelItem => item.Nazov)</p>
+</td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Typ)
-                </td>
+                    <p class="text-center">    @Html.DisplayFor(modelItem => item.Typ)</p>
+</td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Poznamky)
-                </td>
+                    <p class="text-center">     @Html.DisplayFor(modelItem => item.Poznamky)</p>
+</td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.ID">  <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span> </a>  <a asp-action="Details" asp-route-id="@item.ID">  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"> </span>  </a>  <a asp-action="Delete" asp-route-id="@item.ID"> <span class="glyphicon glyphicon-trash" aria-hidden="true"> </span> </a>
                 </td>
