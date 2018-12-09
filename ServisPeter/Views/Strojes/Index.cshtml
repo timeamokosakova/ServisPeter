@@ -1,0 +1,57 @@
+﻿@model IEnumerable<ServisPeter.Models.Stroje>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="color:darkslategrey;font-size:40px; font-weight:bold;">Náradie </h1>
+<p style="text-align: justify; font-family:Times New Roman; font-size:25px;">Sem môžeš, zadať náradie, ktorú si si práve zakúpil. </p>
+
+<div class="container">
+    <br />
+    <div>
+        <form asp-controller="Strojes" asp-action="create">
+            <p style="text-align:center;">
+
+                <input type="submit" value="Vytvoriť" class="btn btn-primary" />
+            </p>
+        </form>
+    </div>
+    <br />
+
+    <table class="table table-hover table-striped table-sm table-bordedless table-dark table-responsive  table-bordered ">
+        <thead style="background-color:#E0E0E0; color:black;">
+            <tr>
+                <th>
+                    <p class="text-center">   @Html.DisplayNameFor(model => model.Nazov) </p>
+</th>
+                <th>
+                    <p class="text-center">  @Html.DisplayNameFor(model => model.Typ)</p>
+                </th>
+                <th>
+                    <p class="text-center">  @Html.DisplayNameFor(model => model.Poznamky)</p>
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nazov)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Typ)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Poznamky)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID">  <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span> </a>  <a asp-action="Details" asp-route-id="@item.ID">  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"> </span>  </a>  <a asp-action="Delete" asp-route-id="@item.ID"> <span class="glyphicon glyphicon-trash" aria-hidden="true"> </span> </a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+ </div>

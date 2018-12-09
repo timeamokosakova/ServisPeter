@@ -1,0 +1,49 @@
+﻿@model ServisPeter.Models.Stroje
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 style="color:darkslategrey;font-size:40px; font-weight:bold;">Úprava náradia </h1>
+
+<p style="text-align: justify; font-family:Times New Roman; font-size:25px;"> Tu môžeš upraviť upraviť náradie, tak ako požaduješ. </p>
+<br />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="Nazov" class="control-label"></label>
+                <input asp-for="Nazov" class="form-control" placeholder="Uprav názov " />
+                <span asp-validation-for="Nazov" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Typ" class="control-label"></label>
+                <input asp-for="Typ" class="form-control" placeholder="Uprav typ " />
+                <span asp-validation-for="Typ" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Poznamky" class="control-label"></label>
+                <input asp-for="Poznamky" class="form-control" placeholder="Uprav poznámku - nie je povinná " />
+                <span asp-validation-for="Poznamky" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Uložiť" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <form asp-controller="Strojes" asp-action="Index">
+        <p>
+            <input type="submit" value="Späť" class="btn btn-default" />
+        </p>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

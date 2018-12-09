@@ -1,0 +1,49 @@
+﻿@model ServisPeter.Models.Stroje
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 style="color:darkslategrey;font-size:40px; font-weight:bold;">Vytvorenie zoznamu náradia </h1>
+
+
+<p style="text-align: justify; font-family:Times New Roman; font-size:25px;" Sem si môžeš pridať zariadenie, ktoré v dielni používaš. </p>
+<br />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nazov" class="control-label"></label>
+                <input asp-for="Nazov" class="form-control" placeholder="Zadaj názov" />
+                <span asp-validation-for="Nazov" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Typ" class="control-label"></label>
+                <input asp-for="Typ" class="form-control" placeholder="Zadaj typ prístroja" />
+                <span asp-validation-for="Typ" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Poznamky" class="control-label"></label>
+                <input asp-for="Poznamky" class="form-control" placeholder="Zadaj poznámku -  nie je povinná" />
+                <span asp-validation-for="Poznamky" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Vytvoriť" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <form asp-controller="Strojes" asp-action="Index">
+        <p>
+            <input type="submit" value="Späť" class="btn btn-default" />
+        </p>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

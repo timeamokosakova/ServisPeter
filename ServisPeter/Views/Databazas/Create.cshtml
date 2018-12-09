@@ -1,0 +1,90 @@
+﻿@model ServisPeter.Models.Databaza
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 style="color:darkslategrey;font-size:40px; font-weight:bold;"> Vytvorenie databázy </h1>
+
+
+<p style="text-align: justify; font-family:Times New Roman; font-size:25px;"> Sem si môžeš pridať opravu auta, ktorú si uskutočnil. </p>
+
+<br />
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Datump" class="control-label"></label>
+                <input asp-for="Datump" class="form-control" />
+                <span asp-validation-for="Datump" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="datumo" class="control-label"></label>
+                <input asp-for="datumo" class="form-control" />
+                <span asp-validation-for="datumo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Auto" class="control-label"></label>
+                <input asp-for="Auto" class="form-control" placeholder="Zadaj názov auta" />
+                <span asp-validation-for="Auto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Typ" class="control-label"></label>
+                <input asp-for="Typ" class="form-control" placeholder="Zadaj typ auta" />
+                <span asp-validation-for="Typ" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kod" class="control-label"></label>
+                <input asp-for="Kod" class="form-control" placeholder="Zadaj kód motora" />
+                <span asp-validation-for="Kod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kilometre" class="control-label"></label>
+                <input asp-for="Kilometre" class="form-control" placeholder="Zadaj počet najazdených kilometrov" />
+                <span asp-validation-for="Kilometre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SPZ" class="control-label"></label>
+                <input asp-for="SPZ" class="form-control" placeholder="Zadaj ŠPZ" />
+                <span asp-validation-for="SPZ" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WIN" class="control-label"></label>
+                <input asp-for="WIN" class="form-control" placeholder="Zadaj 17 miest" />
+                <span asp-validation-for="WIN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Oprava" class="control-label"></label>
+                <input asp-for="Oprava" class="form-control" placeholder="Zadaj, čo si opravil" />
+                <span asp-validation-for="Oprava" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cena" class="control-label"></label>
+                <input asp-for="Cena" class="form-control" placeholder="Zadaj cenu" />
+                <span asp-validation-for="Cena" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Poznamky" class="control-label"></label>
+                <input asp-for="Poznamky" class="form-control" placeholder="Zadaj poznámku - nie je povinná" />
+                <span asp-validation-for="Poznamky" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Vytvoriť" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <form asp-controller="Databazas" asp-action="Index">
+        <p>
+            <input type="submit" value="Späť" class="btn btn-default" />
+        </p>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

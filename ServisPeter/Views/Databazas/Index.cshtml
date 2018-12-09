@@ -1,0 +1,136 @@
+﻿@model IEnumerable<ServisPeter.Models.Databaza>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="color:darkslategrey;font-size:40px; font-weight:bold;">Oprava auta </h1>
+<p style="text-align: justify; font-family:Times New Roman; font-size:25px;">Sem môžeš zadať zákazku, ktorú práve opravuješ alebo si opravil. </p>
+
+<br />
+
+<div style="border:dashed lightgray 1px; text-align:center;">
+    <h1 style="color:darkslategray;font-size:30px; font-weight:bold;">Filtrovanie:</h1>
+    <form class="form-inline" asp-controller="Databazas" asp-action="Index">
+        <div class="form-group">
+            <label for="WIN"> WIN: </label>
+            <input type="text" name="SearchString" class="form-control" id="WIN" placeholder="Zadaj Win">
+            <input type="submit" value="Potvrdiť" class="btn btn-primary" />
+            <input type="submit" value="Vrátiť sa späť" class="btn btn-default" />
+
+        </div>
+    </form>
+
+    <br />
+    <form class="form-inline" asp-controller="Databazas" asp-action="Index">
+        <div class="form-group">
+            <label for="ŠPZ"> ŠPZ: </label>
+            <input type="text" name="searchdva" class="form-control" id="ŠPZ" placeholder="Zadaj Špz Auta">
+            <input type="submit" value="Potvrdiť" class="btn btn-primary" />
+            <input type="submit" value="Vrátiť sa späť" class="btn btn-default" />
+        </div>
+    </form> <br />
+</div>
+<br />
+<div>
+    <form asp-controller="Databazas" asp-action="create">
+        <p style="text-align:center; font-size:25px;">
+            <input type="submit" value="Vytvoriť zákazku" class="btn btn-warning" />
+        </p>
+    </form>
+
+</div>
+<br />
+
+<div class="table-responsive">
+    <table class="table table-hover table-sm table-bordered">
+        <thead style="background-color:#404040; color:white;">
+            <tr>
+                <th>
+                    <p class="text-justify">Poradové číslo:</p>
+                </th>
+                <th>
+                    <p class="text-justify">Dátum prijatia </p>
+                </th>
+                <th>
+                    <p class="text-justify">Dátum odovzdania </p>
+                </th>
+                <th>
+                    <p class="text-justify" @Html.DisplayNameFor(model => model.Auto) </p>
+<th>
+    <p class="text-justify">  @Html.DisplayNameFor(model => model.Typ)</p>
+</th>
+                <th>
+                    <p class="text-justify">@Html.DisplayNameFor(model => model.Kod)</p>
+</th>
+                <th>
+                    <p class="text-justify">Počet KM </p>
+                </th>
+                <th>
+                    <p class="text-justify"> @Html.DisplayNameFor(model => model.SPZ)</p>
+</th>
+                <th>
+                    <p class="text-justify">@Html.DisplayNameFor(model => model.WIN)</p>
+</th>
+                <th>
+                    <p class="text-justify">@Html.DisplayNameFor(model => model.Oprava)</p>
+</th>
+                <th>
+                    <p class="text-justify">@Html.DisplayNameFor(model => model.Cena)</p>
+</th>
+                <th>
+                    <p class="text-justify">@Html.DisplayNameFor(model => model.Poznamky)</p>
+</th>
+                <th> <p class="text-justify"> Operácie: </p>  </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <th>
+                    <p class="text-center">@Html.DisplayFor(modelItem => item.ID)</p>
+                </th>
+                <td>
+                    <p class="text-center">@Html.DisplayFor(modelItem => item.Datump)</p>
+                </td>
+                <td>
+                    <p class="text-center">@Html.DisplayFor(modelItem => item.datumo)</p>
+                </td>
+                <td>
+                    <p class="text-center">@Html.DisplayFor(modelItem => item.Auto)</p>
+                </td>
+                <td>
+                    <p class="text-center">@Html.DisplayFor(modelItem => item.Typ)</p>
+                </td>
+                <td>
+                    <p class="text-center">@Html.DisplayFor(modelItem => item.Kod)</p>
+                </td>
+                <td>
+                    <p class="text-center">@Html.DisplayFor(modelItem => item.Kilometre)KM</p>
+                </td>
+                <td>
+                    <p class="text-center">@Html.DisplayFor(modelItem => item.SPZ)</p>
+                </td>
+                <td>
+                    <p class="text-center">@Html.DisplayFor(modelItem => item.WIN)</p>
+                </td>
+                <td>
+                    <p class="text-center">@Html.DisplayFor(modelItem => item.Oprava)</p>
+                </td>
+                <td>
+                    <p class="text-center">@Html.DisplayFor(modelItem => item.Cena)€</p>
+                </td>
+                <td>
+                    <p class="text-center">@Html.DisplayFor(modelItem => item.Poznamky)</p>
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID">  <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span> </a>  <a asp-action="Details" asp-route-id="@item.ID">  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"> </span>  </a>  <a asp-action="Delete" asp-route-id="@item.ID"> <span class="glyphicon glyphicon-trash" aria-hidden="true"> </span> </a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<br />
+<br />

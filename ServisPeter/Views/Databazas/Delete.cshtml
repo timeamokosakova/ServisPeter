@@ -1,0 +1,97 @@
+﻿@model ServisPeter.Models.Databaza
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1 style="color:darkslategrey;font-size:40px; font-weight:bold;">Odstránenie </h1>
+
+<div class="bg-danger text-white">
+    <h1 style="font-size:30px;text-align:center;">
+        Si si istý, že to chceš urobiť?
+    </h1>
+</div>
+<div>
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Datump)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Datump)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.datumo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.datumo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Auto)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Auto)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Typ)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Typ)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Kod)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Kod)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Kilometre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Kilometre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SPZ)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SPZ)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.WIN)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.WIN)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Oprava)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Oprava)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cena)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cena)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Poznamky)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Poznamky)
+        </dd>
+    </dl>
+
+    <div>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="ID" />
+            <input type="submit" value="Odstrániť" class="btn btn-danger" />
+        </form>
+        <br />
+        <form asp-controller="Databazas" asp-action="Index">
+            <p>
+                <input type="submit" value="Späť" class="btn btn-default" />
+            </p>
+        </form>
+    </div>
+</div>

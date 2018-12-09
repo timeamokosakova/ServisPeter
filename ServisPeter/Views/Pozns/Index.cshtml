@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ServisPeter.Models.Pozns>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="color:darkslategrey;font-size:40px; font-weight:bold;">Poznámky </h1>
+<p style="text-align: justify; font-family:Times New Roman; font-size:25px;"> Sem môžeš zadať poznámku, ktorú potrebuješ. </p>
+
+<br />
+<div>
+    <form asp-controller="Pozns" asp-action="create">
+        <p style="text-align:center;">
+
+            <input type="submit" value="Vytvoriť poznámku" class="btn btn-primary" />
+        </p>
+    </form>
+</div>
+
+<br />
+
+<table class="table table-hover table-striped table-sm table-bordedless table-responsive table-bordered ">
+
+    <thead style="background-color:#E0E0E0; color:black;">
+        <tr>
+            <th>
+                <p class="text-center">   @Html.DisplayNameFor(model => model.Datum)</p>
+            </th>
+            <th>
+                <p class="text-center">     @Html.DisplayNameFor(model => model.Nazov)</p>
+            </th>
+            <th>
+                <p class="text-center">   @Html.DisplayNameFor(model => model.Predmet)</p>
+            </th>
+            <th>
+                <p class="text-center">   @Html.DisplayNameFor(model => model.Text)</p>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Datum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nazov)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Predmet)
+            </td>
+            <td>
+                <p class="text-justify">     @Html.DisplayFor(modelItem => item.Text)</p>
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">  <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span> </a>  <a asp-action="Details" asp-route-id="@item.ID">  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"> </span>  </a>  <a asp-action="Delete" asp-route-id="@item.ID"> <span class="glyphicon glyphicon-trash" aria-hidden="true"> </span> </a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
